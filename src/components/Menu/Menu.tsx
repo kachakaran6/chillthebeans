@@ -3,16 +3,22 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { menuData, MenuItem } from '../../data/menuData';
 
 const categories = [
-  { id: 'coffee', label: 'Coffee' },
-  { id: 'sweet', label: 'Sweet Treats' },
-  { id: 'lighter', label: 'Something Lighter' },
-  { id: 'milk-addons', label: 'Milk & Add-ons' },
+  { id: 'hot-drinks', label: 'Hot Drinks' },
+  { id: 'chill-drinks', label: 'Iced & Chill Drinks' },
+  { id: 'smoothie-bowls', label: 'Smoothie Bowls' },
+  { id: 'ice-cream', label: 'Ice Cream Range' },
+  { id: 'treats', label: 'Treats & Snacks' },
+  { id: 'addons', label: 'Extras & Add-ons' },
 ];
 
 export default function Menu() {
   const [activeCategory, setActiveCategory] = useState(categories[0].id);
 
-  const filteredMenu = menuData.filter(item => item.category === activeCategory);
+  // Fallback in case of HMR or stale state where activeCategory no longer exists
+  const activeCatExists = categories.some(c => c.id === activeCategory);
+  const currentCategory = activeCatExists ? activeCategory : categories[0].id;
+
+  const filteredMenu = menuData.filter(item => item.category === currentCategory);
 
   return (
     <section id="menu" className="py-24 bg-cream-foam text-cocoa-dark relative">
@@ -28,13 +34,13 @@ export default function Menu() {
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
                 className={`snap-start whitespace-nowrap px-6 py-4 md:px-4 md:py-4 text-left transition-all rounded-xl md:rounded-r-none relative md:border-r-2 ${
-                  activeCategory === cat.id 
+                  currentCategory === cat.id 
                     ? 'text-caramel font-medium border-caramel bg-oat/50' 
                     : 'text-cocoa-rich/70 hover:text-cocoa-dark border-transparent hover:bg-oat/30'
                 }`}
               >
                 <span className="font-display text-xl">{cat.label}</span>
-                {activeCategory === cat.id && (
+                {currentCategory === cat.id && (
                   <motion.div 
                     layoutId="activeTabIndicator"
                     className="absolute bottom-0 left-0 right-0 h-1 md:h-auto md:top-0 md:bottom-0 md:right-[-2px] md:left-auto md:w-1 bg-caramel"
