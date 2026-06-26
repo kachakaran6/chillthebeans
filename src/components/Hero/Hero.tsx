@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
-import CookieScene from './CookieScene';
+import MugScene from './MugScene';
 
 export default function Hero() {
   return (
@@ -30,7 +30,7 @@ export default function Hero() {
             </h1>
             
             <p className="font-body text-lg md:text-xl font-light text-oat/90 max-w-md leading-relaxed mb-8">
-              The tiny cafe Limerick queues for. Rich hot chocolate, caramel SOS cookies, and the fastest line you'll ever be glad to stand in.
+              The tiny cafe Limerick queues for. Rich hot chocolate, fast friendly service, and a cup that's always worth the wait.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -41,7 +41,7 @@ export default function Hero() {
                 See the menu
               </a>
               <a 
-                href="https://www.google.com/maps/search/?api=1&query=Chill+The+Beans+Mungret" 
+                href="https://www.google.com/maps/place/Chill+The+Beans+Mungret/@52.6358076,-8.8454167,12z/data=!4m10!1m2!2m1!1scafe!3m6!1s0x485b45611b2c5633:0x2261941a225af6b6!8m2!3d52.6358076!4d-8.6929814!15sCgRjYWZlWgYiBGNhZmWSAQRjYWZl4AEA!16s%2Fg%2F11n8lz2skk?entry=ttu&g_ep=EgoyMDI2MDYyMy4wIKXMDSoASAFQAw%3D%3D" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-transparent border border-oat/30 text-cream-foam px-8 py-4 rounded-full font-medium text-center hover:border-caramel hover:text-caramel transition-colors"
@@ -52,23 +52,20 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right 3D Canvas */}
-        <div className="h-[50vh] lg:h-[80vh] w-full relative">
+        {/* Right Hero Image */}
+        <div className="h-[50vh] lg:h-[80vh] w-full relative flex items-center justify-center">
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="w-full h-full cursor-grab active:cursor-grabbing"
+            className="w-full h-full relative"
           >
-            <Suspense fallback={
-              <div className="w-full h-full flex items-center justify-center text-caramel font-mono text-sm">
-                Loading...
-              </div>
-            }>
-              <Canvas camera={{ position: [0, 3, 6], fov: 45 }}>
-                <CookieScene />
-              </Canvas>
-            </Suspense>
+            <div className="absolute inset-0 bg-gradient-to-t from-cocoa-dark via-transparent to-transparent z-10"></div>
+            <img 
+              src="/assets/photoreal_latte.png" 
+              alt="A beautiful cup of latte with heart shaped latte art"
+              className="w-full h-full object-cover rounded-2xl shadow-2xl shadow-cocoa-dark/50"
+            />
           </motion.div>
         </div>
 

@@ -13,7 +13,7 @@ export default function Footer() {
           <a href="tel:+353830811943" className="hover:text-caramel transition-colors">
             +353 83 081 1943
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-caramel transition-colors">
+          <a href="https://www.instagram.com/chilldbeans/?hl=en" target="_blank" rel="noopener noreferrer" className="hover:text-caramel transition-colors">
             Instagram
           </a>
         </div>

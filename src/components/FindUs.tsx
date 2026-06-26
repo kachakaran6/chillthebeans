@@ -63,7 +63,7 @@ export default function FindUs() {
           <div className="h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-xl bg-oat/50 relative">
             <iframe 
               title="Google Maps location of Chill The Beans Mungret"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2426.687487214695!2d-8.675000000000000!3d52.635000000000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDM4JzA2LjAiTiA4wrA0MCczMC4wIlc!5e0!3m2!1sen!2sie!4v1600000000000!5m2!1sen!2sie" 
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d19413.499897715424!2d-8.6929814!3d52.6358076!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b45611b2c5633%3A0x2261941a225af6b6!2sChill%20The%20Beans%20Mungret!5e0!3m2!1sen!2sie!4v1700000000000!5m2!1sen!2sie"
               width="100%" 
               height="100%" 
               style={{ border: 0, filter: 'grayscale(0.3) sepia(0.2) hue-rotate(5deg)' }} 
